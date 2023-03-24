@@ -1,0 +1,47 @@
+[
+    {
+        "name":"assetPrivateCollection",
+        "policy":"OR('PatientOrgMSP.member','HospitalOrgMSP.member','PharmacyOrgMSP.member')",
+        "requiredPeerCount": 0,
+        "maxPeerCount": 1,
+        "blockToLive": 1000000,
+        "memberOnlyRead": true,
+        "memberOnlyWrite": true
+    },
+    {
+        "name":"PatientOrgMSPPrivateCollection",
+        "policy": "OR('PatientOrgMSP.member','HospitalOrgMSP.member')",
+        "requiredPeerCount": 0,
+        "maxPeerCount": 1,
+        "blockToLive": 0,
+        "memberOnlyRead": false,
+        "memberOnlyWrite": true,
+        "endorsementPolicy": {
+          "signaturePolicy": "OR('PatientOrgMSP.member','HospitalOrgMSP.member')"
+        }
+    },
+    {
+        "name":"HospitalOrgMSPPrivateCollection",
+        "policy": "OR('HospitalOrgMSP.member')",
+        "requiredPeerCount": 0,
+        "maxPeerCount": 1,
+        "blockToLive":3,
+        "memberOnlyRead": true,
+        "memberOnlyWrite": false,
+        "endorsementPolicy": {
+          "signaturePolicy": "OR('HospitalOrgMSP.member')"
+        }
+    },
+    {
+        "name":"PharmacyOrgMSPPrivateCollection",
+        "policy": "OR('PharmacyOrgMSP.member')",
+        "requiredPeerCount": 0,
+        "maxPeerCount": 1,
+        "blockToLive":3,
+        "memberOnlyRead": true,
+        "memberOnlyWrite": false,
+        "endorsementPolicy": {
+          "signaturePolicy": "OR('PharmacyOrgMSP.member')"
+        }
+    }
+]
