@@ -15,10 +15,7 @@
         "maxPeerCount": 1,
         "blockToLive": 0,
         "memberOnlyRead": false,
-        "memberOnlyWrite": true,
-        "endorsementPolicy": {
-          "signaturePolicy": "OR('PatientOrgMSP.member','HospitalOrgMSP.member')"
-        }
+        "memberOnlyWrite": true
     },
     {
         "name":"HospitalOrgMSPPrivateCollection",

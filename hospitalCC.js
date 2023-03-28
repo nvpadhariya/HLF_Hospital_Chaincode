@@ -8,9 +8,9 @@ const Pharmacy = require('./lib/pharmacy');
 
 class Hospital extends Contract {
 
-    async addPatientDetails(ctx, patientId, firstName, lastName, email, userType, createdAt, city, address, state) {
+    async addPatientDetails(ctx, patientDetails) {
         const patientModule = new Patient();
-        return patientModule.addPatientDetails(ctx, patientId, firstName, lastName, email, userType, createdAt, city, address, state);
+        return patientModule.addPatientDetails(ctx, patientDetails);
     }
 
     async getPatientlByIdNew(ctx, patientId) {
@@ -18,9 +18,9 @@ class Hospital extends Contract {
         return patientModule.getPatientlByIdNew(ctx, patientId);
     }
 
-    async addHospitalDetails(ctx, hospitalId, name, email, userType, createdAt, type, doctor) {
+    async addHospitalDetails(ctx, hospitalDetails) {
         const hospitalModule = new HospitalD();
-        return hospitalModule.addHospitalDetails(ctx, hospitalId, name, email, userType, createdAt, type, doctor);
+        return hospitalModule.addHospitalDetails(ctx, hospitalDetails);
     }
 
     async getHospitalDetailsById(ctx, hospitalId) {
@@ -28,19 +28,19 @@ class Hospital extends Contract {
         return hospitalModule.getHospitalDetailsById(ctx, hospitalId);
     }
 
-    async addPharmacyDetails(ctx, pharmcyId, name, email, userType, createdAt, mobileNumber, city, state) {
+    async addPharmacyDetails(ctx, pharmacyDetails) {
         const pharmacyModule = new Pharmacy();
-        return pharmacyModule.addPharmacyDetails(ctx, pharmcyId, name, email, userType, createdAt, mobileNumber, city, state);
+        return pharmacyModule.addPharmacyDetails(ctx, pharmacyDetails);
     }
 
-    async getPharmacyDetailsById(ctx, pharmcyId) {
+    async getPharmacyDetailsById(ctx, pharmacyId) {
         const pharmacyModule = new Pharmacy();
-        return pharmacyModule.getPharmacyDetailsById(ctx, pharmcyId);
+        return pharmacyModule.getPharmacyDetailsById(ctx, pharmacyId);
     }
 
-    async createAppointment(ctx, appointmentId, patientId, createDate) {
+    async createAppointment(ctx, createAppointmentDetails) {
         const patientModule = new Patient();
-        return patientModule.createAppointment(ctx, appointmentId, patientId, createDate);
+        return patientModule.createAppointment(ctx, createAppointmentDetails);
     }
 
     async getAppointmentDetailsById(ctx, appointmentId) {
